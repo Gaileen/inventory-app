@@ -1,2 +1,6 @@
 # inventory-app
-The inventory app project in The Odin Project's Node JS course.
+The inventory management app project in The Odin Project's Node JS course.
+
+TODO BEFORE PROD:
+- change DB_URL
+- change db/populatedb.js to take args
