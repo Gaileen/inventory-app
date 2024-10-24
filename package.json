@@ -4,6 +4,7 @@
   "description": "The inventory app project in The Odin Project's Node JS course.",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
