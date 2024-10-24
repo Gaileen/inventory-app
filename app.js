@@ -8,7 +8,7 @@ app.use(express.static('public')); // static files (css)
 
 app.use("/", invenRouter);
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-    console.log(`Express app listening on port ${PORT}.`);
+const port = process.env.PORT;
+app.listen(port, () => {
+    console.log(`Express app listening on port ${port}.`);
 });
