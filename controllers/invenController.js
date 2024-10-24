@@ -1,9 +1,13 @@
 const db = require("../db/queries");
 
 async function getInventory(req, res) {
-    const inven = await db.getAllInventory();
-    console.log(inven);
-    res.send(inven);
+    if (req.query.search) {
+        const results = await db.searchInventory(req.query.search);
+        res.render("index", { books: results });
+    } else {
+        const books = await db.getAllInventory();
+        res.render("index", { books: books });
+    }
 }
 
 module.exports = {

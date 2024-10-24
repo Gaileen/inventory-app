@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Inventory</title>
+    <!-- static files path configured in app.js via Express -->
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    
+    <!-- include navbar -->
+    <h1>Book Inventory</h1>
+
+    <div class="content">
+
+        <!-- include dialog modals -->
+
+        <div class="options-bar">
+            <!-- search bar -->
+            <form action="/" method="GET" class="search">
+                <label for="search"></label>
+                <input id="search" name="search" type="text" placeholder="Enter KEYWORD...">
+                <button type="submit">Search</button>
+            </form>
+            <div>
+                <!-- add btn -->
+                 <a href="/add">
+                    <button type="button">+ Add book</button>
+                </a>
+                <!-- filter button -->
+                <button type="button">Filter</button>
+            </div>
+        </div>
+
+        <table class="inven-list">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Quantity</th>
+                    <th></th> 
+                </tr>
+            </thead>
+            <tbody>
+                <% if (locals.books) { %> 
+                    <% books.forEach(book => { %>
+                        <tr>
+                            <td><%= book.title %></td>
+                            <td><%= book.author %></td>
+                            <td><%= book.genre %></td>
+                            <td><%= book.quantity %></td>
+                            <!-- use icon instead of text later -->
+                            <td><a href="/<%= book.id %>/update"><button>Edit</button></a></td>
+                        </tr>
+                    <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

@@ -18,7 +18,7 @@ INSERT INTO books (title, author, genre, quantity)
 VALUES
     ('The Fabric of Empire', 'Danielle C. Skeehan', 'history', 1),
     ('Suzuki Cello School Vol. 1', 'Schinichi Suzuki', 'music', 2),
-    ('A New Histry of Asian America', 'Shelley Sang-Hee Lee', 'history', 2);
+    ('A New History of Asian America', 'Shelley Sang-Hee Lee', 'history', 2);
 `;
 
 async function main() {
